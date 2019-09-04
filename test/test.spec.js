@@ -4,7 +4,7 @@ const axios = require('axios');
 jest.setTimeout(300000);
 
 const composeUp = () => new Promise((resolve, reject) => {
-	exec('docker-compose up -d', (err, stdout, stderr) => {
+	exec('docker-compose up --build -d', (err, stdout, stderr) => {
 		if (err) {
 			console.error(err);
 			return reject();
