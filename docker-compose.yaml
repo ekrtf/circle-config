@@ -1,0 +1,22 @@
+version: '3'
+services:
+  nginx:
+    image: nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    networks:
+      - the-network
+    ports:
+      - 8080:8080
+
+  app:
+    build: .
+    networks:
+      the-network:
+        aliases:
+          - dummy-app
+    expose:
+      - "3000"
+
+networks:
+  the-network:

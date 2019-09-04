@@ -1,1 +1,4 @@
-# circle-config
+circle-config
+=============
+
+Playing with CircleCI
